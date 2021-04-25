@@ -3,6 +3,22 @@ var bally=300;
 var ballSize=40;
 var score=0;
 var gameState="L1";
+var img;
+var img2;
+var img3;
+
+function preload() {
+// preload() runs once, it may make you wait
+//  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
+// you can link to an image on your github account
+// img = loadImage('https://dma-git.github.io/images/74.png');
+
+img = loadImage('https://mrtwaters.github.io/ghost.gif');
+img2 = loadImage('https://mrtwaters.github.io/pacman.gif');
+img3 = loadImage('https://mrtwaters.github.io/game_over.gif');
+
+}
+
 function setup() {
 
 createCanvas (600,600);
@@ -11,9 +27,7 @@ textSize(20);
 
 } // end of setup
 
-
 function draw() {
-
 background (220);
 if (gameState == "L1"){
 levelOne();
@@ -44,8 +58,8 @@ if (score>=5) {
 gameState ="L2";
 }
 line(ballx,bally,mouseX,mouseY);
-
-ellipse(ballx,bally,ballSize,ballSize);
+//ellipse(ballx,bally,ballSize,ballSize);
+image(img,ballx,bally,ballSize,ballSize);
 
 } // end level one
 
@@ -64,8 +78,8 @@ if (score>=10) {
 gameState="L3";
 }
 //line(ballx,bally,mouseX,mouseY);
-
-ellipse(ballx,bally,ballSize,ballSize);
+//ellipse(ballx,bally,ballSize,ballSize);
+image(img,ballx,bally,ballSize,ballSize);
 
 } // end level two 
 
@@ -85,7 +99,7 @@ if (score>=15) {
 background(random(255));
 }
 //line(ballx,bally,mouseX,mouseY);
-
-ellipse(ballx,bally,ballSize,ballSize);
+//ellipse(ballx,bally,ballSize,ballSize);
+image(img,ballx,bally,ballSize,ballSize);
 
 } // end level three 
