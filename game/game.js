@@ -78,8 +78,8 @@ if (score>=10) {
 gameState="L3";
 }
 //line(ballx,bally,mouseX,mouseY);
-//ellipse(ballx,bally,ballSize,ballSize);
-image(img,ballx,bally,ballSize,ballSize);
+ellipse(ballx,bally,ballSize,ballSize);
+//image(img,ballx,bally,ballSize,ballSize);
 
 } // end level two 
 
@@ -99,7 +99,7 @@ if (score>=15) {
 background(random(255));
 }
 //line(ballx,bally,mouseX,mouseY);
-//ellipse(ballx,bally,ballSize,ballSize);
-image(img,ballx,bally,ballSize,ballSize);
+ellipse(ballx,bally,ballSize,ballSize);
+//image(img,ballx,bally,ballSize,ballSize);
 
 } // end level three 
