@@ -13,9 +13,9 @@ function preload() {
 // you can link to an image on your github account
 // img = loadImage('https://dma-git.github.io/images/74.png');
 
-img = loadImage('https://mrtwaters.github.io/ghost.gif');
-img2 = loadImage('https://mrtwaters.github.io/pacman.gif');
-img3 = loadImage('https://mrtwaters.github.io/game_over.gif');
+img = loadImage('https://mrtwaters.github.io/game/ghost.gif');
+img2 = loadImage('https://mrtwaters.github.io/game/pacman.gif');
+img3 = loadImage('https://mrtwaters.github.io/game/game_over.gif');
 
 }
 
@@ -48,7 +48,7 @@ function levelOne() {
 text ("level 1", width/2, height-20);
 
 var distToBall=dist(ballx,bally,mouseX,mouseY);
-if (distToBall<ballSize/2){
+if (distToBall<ballSize){
   ballx=random(width);
   bally=random(height);
 score=score+1;
@@ -57,9 +57,10 @@ score=score+1;
 if (score>=5) {
 gameState ="L2";
 }
-line(ballx,bally,mouseX,mouseY);
+line(ballx+ballSize/2,bally+ballSize/2,mouseX,mouseY);
 //ellipse(ballx,bally,ballSize,ballSize);
 image(img,ballx,bally,ballSize,ballSize);
+image(img2,mouseX,mouseY,ballSize,ballSize);
 
 } // end level one
 
@@ -68,7 +69,7 @@ background(200,100,0);
 text ("level 2", width/2, height-20);
 
 var distToBall=dist(ballx,bally,mouseX,mouseY);
-if (distToBall<ballSize/2){
+if (distToBall<ballSize){
   ballx=random(width);
   bally=random(height);
 score=score+1;
@@ -78,8 +79,9 @@ if (score>=10) {
 gameState="L3";
 }
 //line(ballx,bally,mouseX,mouseY);
-ellipse(ballx,bally,ballSize,ballSize);
-//image(img,ballx,bally,ballSize,ballSize);
+//ellipse(ballx,bally,ballSize,ballSize);
+image(img,ballx,bally,ballSize,ballSize);
+image(img2,mouseX,mouseY,ballSize,ballSize);
 
 } // end level two 
 
@@ -88,7 +90,7 @@ background(0,100,200);
 text ("level 3", width/2, height-20);
 
 var distToBall=dist(ballx,bally,mouseX,mouseY);
-if (distToBall<ballSize/2){
+if (distToBall<ballSize){
   ballx=random(width);
   bally=random(height);
 score=score+1;
@@ -96,10 +98,11 @@ ballSize=ballSize-5;
 } //if distToBall
 
 if (score>=15) {
-background(random(255));
+background(image(255));
 }
 //line(ballx,bally,mouseX,mouseY);
-ellipse(ballx,bally,ballSize,ballSize);
-//image(img,ballx,bally,ballSize,ballSize);
+//ellipse(ballx,bally,ballSize,ballSize);
+image(img,ballx,bally,ballSize,ballSize);
+image(img2,mouseX,mouseY,ballSize,ballSize);
 
 } // end level three 
