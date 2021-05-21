@@ -6,6 +6,7 @@ var gameState="L1";
 var img;
 var img2;
 var img3;
+var gameOver="KO";
 
 function preload() {
 // preload() runs once, it may make you wait
@@ -37,6 +38,8 @@ levelTwo();
 }
 if (gameState == "L3"){
 levelThree();
+if (gameState == "KO"){
+gameOver();
 }
 
 text(("Score:"+score),width/2,40);
@@ -97,8 +100,9 @@ score=score+1;
 ballSize=ballSize-5;
 } //if distToBall
 
-if (score>=15) {
-background(image(255));
+if (score>=16) {
+img3 = loadImage('https://mrtwaters.github.io/game/game_over.gif');
+
 }
 //line(ballx,bally,mouseX,mouseY);
 //ellipse(ballx,bally,ballSize,ballSize);
@@ -106,3 +110,6 @@ image(img,ballx,bally,ballSize,ballSize);
 image(img2,mouseX,mouseY,ballSize,ballSize);
 
 } // end level three 
+
+
+}
